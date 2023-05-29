@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 12rem 14rem 13rem 11rem;
+    color: #fff;
+    background: linear-gradient(to right, #333 15%, #000 80%);
+}
+
+.root {
+    font-family: 'Hepta Slab';
+    font-size: 50%;
+}
+
+.grid {
+    display: grid;
+    gap: 3.2rem;
+}
+
+header {
+    position: fixed;
+    max-width: 20rem;
+}
+
+header h1 {
+    font-size: 4.8rem;
+    font-weight: 400;
+}
+
+header span {
+    float: right;
+}
+
+main {
+    margin-left: 35.6rem;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.modelo1 .container:nth-child(1) {
+    grid-row: 1/3;
+}
+
+.modelo1 .container:nth-child(1) img,
+.modelo2 .container:nth-child(3) img {
+    aspect-ratio: 9/16;
+}
+
+.horizontal {
+    grid-column: 1/3;
+}
+
+.horizontal img {
+    aspect-ratio: 16/9;
+}
+
+.modelo2 .container:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1/3;
+}
+
+.container {
+    position: relative;
+    border-radius: 10px;
+    outline: 4px solid transparent;
+
+    transition: all .4s;
+}
+
+.container span {
+    width: 100%;
+    display: block;
+    padding: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+
+    background: linear-gradient(to bottom, transparent, #000 50%);
+    transition: all .4s;
+}
+
+.container:hover span {
+    visibility: visible;
+}
+
+.container:hover {
+    outline-color: #c1c1c1;
+    transform: scale(1.2);
+    z-index: 99;
+}
+
+@media (min-width: 300px) and (max-width:768px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        position: static;
+        max-width: 5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    body {
+        display: block;
+        padding: 1rem;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    header span {
+        float: left;
+    }
+}
+
+@media (min-width: 769px) and (max-width:1024px) {
+
+    header {
+        max-width: 15rem;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    body {
+        padding: 8rem 5rem 4rem 7rem;
+    }
+
+    main {
+        margin-left: 25rem;
+    }
+
+    .grid {
+        gap: 1.5rem;
+    }
+
+}
